@@ -3,142 +3,266 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subash K C Portfolio</title>
+  <title>Subash K C | Portfolio</title>
+
   <style>
-    /* Reset */
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: Arial, sans-serif; line-height:1.6; background:#f4f4f9; color:#333; scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height:1.6;
+      background:#f4f4f9;
+      color:#333;
+      scroll-behavior: smooth;
+    }
 
     /* Navigation */
-    nav { position: fixed; top:0; width:100%; background:#4a90e2; color:white; display:flex; justify-content:center; padding:1rem 0; z-index:1000; }
-    nav a { color:white; margin:0 1rem; text-decoration:none; font-weight:bold; transition:0.3s; }
-    nav a:hover { text-decoration:underline; }
+    nav {
+      position: fixed;
+      top:0;
+      width:100%;
+      background:#111;
+      display:flex;
+      justify-content:center;
+      padding:1rem 0;
+      z-index:1000;
+    }
 
-    /* Header / Hero */
-    header { height:100vh; background:#4a90e2; color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem; }
-    header h1 { font-size:3rem; margin-bottom:0.5rem; }
-    header p { font-size:1.2rem; max-width:600px; }
+    nav a {
+      color:white;
+      margin:0 1rem;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover { color:#4a90e2; }
+
+    /* Hero */
+    header {
+      height:100vh;
+      background:#111;
+      color:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:2rem;
+    }
+
+    header h1 {
+      font-size:3rem;
+      margin-bottom:0.5rem;
+    }
+
+    header p {
+      font-size:1.2rem;
+      max-width:600px;
+      color:#bbb;
+    }
 
     /* Sections */
-    section { padding:4rem 2rem; max-width:1000px; margin:auto; }
-    h2 { color:#4a90e2; margin-bottom:1rem; }
+    section {
+      padding:4rem 2rem;
+      max-width:1000px;
+      margin:auto;
+    }
 
-    /* About */
-    #about p { margin-bottom:1rem; }
+    h2 {
+      margin-bottom:2rem;
+      font-size:2rem;
+    }
 
-    /* Projects grid */
-    .projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; }
-    .project-card { background:white; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    .project-card h3 { margin-bottom:0.5rem; color:#357ab7; }
-    .project-card p { margin-bottom:0.5rem; font-size:0.95rem; }
-    .project-card span { font-size:0.85rem; color:#777; }
-    .project-card a { text-decoration:none; color:white; background:#4a90e2; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
-    .project-card a:hover { background:#357ab7; }
+    /* Category Tags */
+    .tag {
+      display:inline-block;
+      padding:4px 10px;
+      font-size:0.75rem;
+      border-radius:20px;
+      font-weight:bold;
+      margin-bottom:10px;
+      color:white;
+    }
+
+    .finance { background:#2c7be5; }
+    .ml { background:#e83e8c; }
+    .data { background:#20c997; }
+
+    /* Projects */
+    .projects-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap:1.5rem;
+    }
+
+    .project-card {
+      background:white;
+      padding:1.5rem;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .project-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .project-card h3 {
+      margin-bottom:0.7rem;
+    }
+
+    .project-card p {
+      margin-bottom:0.6rem;
+      font-size:0.9rem;
+    }
+
+    .project-card a {
+      display:inline-block;
+      margin-top:0.8rem;
+      text-decoration:none;
+      background:#111;
+      color:white;
+      padding:0.5rem 1rem;
+      border-radius:5px;
+      font-size:0.85rem;
+      transition:0.3s;
+    }
+
+    .project-card a:hover {
+      background:#4a90e2;
+    }
 
     /* CV */
-    .cv-link { display:inline-block; text-decoration:none; color:white; background:#4a90e2; padding:0.7rem 1.5rem; border-radius:6px; transition:0.3s; }
-    .cv-link:hover { background:#357ab7; }
+    .cv-link {
+      display:inline-block;
+      background:#111;
+      color:white;
+      padding:0.7rem 1.5rem;
+      border-radius:6px;
+      text-decoration:none;
+      transition:0.3s;
+    }
 
-    /* Contact */
-    .contact-links a { display:inline-block; margin-right:1rem; text-decoration:none; color:white; background:#4a90e2; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
-    .contact-links a:hover { background:#357ab7; }
+    .cv-link:hover { background:#4a90e2; }
 
-    /* Footer */
-    footer { text-align:center; padding:1.5rem; color:#777; background:#e4e4e4; margin-top:2rem; }
+    footer {
+      text-align:center;
+      padding:1.5rem;
+      color:#777;
+      background:#eee;
+      margin-top:2rem;
+    }
 
-    @media(max-width:600px){ nav a{ margin:0 0.5rem; } }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#cv">CV</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <!-- Header / Hero -->
-  <header>
-    <h1>Subash K C</h1>
-    <p>Applied Mathematics | Computational Finance, Machine Learning & Stochastic Modeling</p>
-  </header>
+<header>
+  <h1>Subash K C</h1>
+  <p>Applied Mathematics | Quantitative Finance | Machine Learning | Stochastic Modeling</p>
+</header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a master’s student in Applied Mathematics with a focus on computational finance, stochastic modeling, and machine learning. My projects explore numerical methods for option pricing, demand forecasting, and genetic oscillators.</p>
-    <p>I enjoy building reproducible simulations, analyzing complex datasets, and presenting results clearly through visualizations and reports.</p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Master’s student in Applied Mathematics specializing in computational finance, machine learning, and stochastic modeling. I develop simulation-based models, implement numerical methods, and build predictive systems using Python and mathematical analysis.</p>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Monte Carlo Barrier Pricing</h3>
-        <span>(2025) [Finance]</span>
-        <p>Pricing barrier options using Monte Carlo simulations.</p>
-        <a href="Monte_Carlo_Barrier_Pricing.pdf" target="_blank">View PDF</a>
-      </div>
-      <div class="project-card">
-        <h3>Machine Learning Bike Demand</h3>
-        <span>(2025) [Machine Learning]</span>
-        <p>Predicting bike-sharing demand with ML techniques; achieved high accuracy on test data.</p>
-        <a href="Machine_Learning_Bike_Demand.pdf" target="_blank">View PDF</a>
-      </div>
-      <div class="project-card">
-        <h3>Electricity Demand Forecasting</h3>
-        <span>(2025) [Data Analysis]</span>
-        <p>Forecasting electricity demand using statistical and ML models.</p>
-        <a href="Electricity_Demand_Forecasting.pdf" target="_blank">View PDF</a>
-      </div>
-      <div class="project-card">
-        <h3>CEV Model Pricing Comparison</h3>
-        <span>(2025) [Finance]</span>
-        <p>Comparing different pricing methods under the CEV model.</p>
-        <a href="CEV_Model_Pricing_Comparison.pdf" target="_blank">View PDF</a>
-      </div>
-      <div class="project-card">
-        <h3>American Options Numerical Methods</h3>
-        <span>(2025) [Finance]</span>
-        <p>Analysis of numerical approaches for pricing American options.</p>
-        <a href="American_Options_Numerical_Methods.pdf" target="_blank">View PDF</a>
-      </div>
-      <div class="project-card">
-        <h3>Markov Chain Market Analysis</h3>
-        <span>(2025) [Finance / Stochastic]</span>
-        <p>Market modeling and simulation using Markov Chains.</p>
-        <a href="Markov_Chain_Market_Analysis.pdf" target="_blank">View PDF</a>
-      </div>
-      <div class="project-card">
-        <h3>SVD Handwritten Digit Classification</h3>
-        <span>(2025) [Machine Learning]</span>
-        <p>Using Singular Value Decomposition to classify handwritten digits.</p>
-        <a href="SVD_Handwritten_Digit_Classification.pdf" target="_blank">View PDF</a>
-      </div>
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <span class="tag finance">Finance</span>
+      <h3>Monte Carlo Barrier Option Pricing (2026)</h3>
+      <p><strong>Skills:</strong> Python, NumPy, Pandas, SciPy, Matplotlib, stochastic calculus, probability theory.</p>
+      <p><strong>Outcome:</strong> Built a variance-reduced Monte Carlo framework for pricing barrier options using market data.</p>
+      <a href="Monte_Carlo_Barrier_Pricing.pdf" target="_blank">View Project</a>
     </div>
-  </section>
 
-  <!-- CV Section -->
-  <section id="cv">
-    <h2>Curriculum Vitae</h2>
-    <p>You can download my CV here:</p>
-    <a class="cv-link" href="CV.pdf" target="_blank">Download CV</a>
-  </section>
+    <div class="project-card">
+      <span class="tag ml">Machine Learning</span>
+      <h3>Bike Demand Prediction (2025)</h3>
+      <p><strong>Skills:</strong> Python, Pandas, NumPy, Scikit-learn, statistical modeling.</p>
+      <p><strong>Outcome:</strong> Developed and compared regression and ensemble models for demand prediction with performance evaluation.</p>
+      <a href="Machine_Learning_Bike_Demand.pdf" target="_blank">View Project</a>
+    </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>If you would like to get in touch regarding opportunities or collaborations, feel free to contact me:</p>
-  
-    <p><strong>Email:</strong> subashkc1999@outlook.com</p>
-    <p><strong>GitHub:</strong> https://github.com/supppp3005</p>
-  </section>
-  <footer>
-    &copy; 2026 Subash K C – Master’s Portfolio
-  </footer>
+    <div class="project-card">
+      <span class="tag data">Data Analysis</span>
+      <h3>Electricity Demand Forecasting (2025)</h3>
+      <p><strong>Skills:</strong> Python, R, time series analysis, statistical inference.</p>
+      <p><strong>Outcome:</strong> Implemented ARIMA and SARIMA models to forecast electricity demand with seasonal adjustment.</p>
+      <a href="Electricity_Demand_Forecasting.pdf" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <span class="tag finance">Finance</span>
+      <h3>American Option Pricing (2025)</h3>
+      <p><strong>Skills:</strong> Python, numerical PDE methods, finite differences.</p>
+      <p><strong>Outcome:</strong> Implemented PSOR and operator splitting methods for American option valuation.</p>
+      <a href="American_Options_Numerical_Methods.pdf" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <span class="tag finance">Finance</span>
+      <h3>CEV Model Pricing Comparison (2025)</h3>
+      <p><strong>Skills:</strong> Python, MATLAB, stochastic differential equations.</p>
+      <p><strong>Outcome:</strong> Compared Monte Carlo, lattice, and finite difference methods under the CEV model.</p>
+      <a href="CEV_Model_Pricing_Comparison.pdf" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <span class="tag finance">Finance</span>
+      <h3>Markov Chain Market Regimes (2025)</h3>
+      <p><strong>Skills:</strong> Python, probability modeling, stochastic processes.</p>
+      <p><strong>Outcome:</strong> Modeled bull and bear market transitions using Markov chain state dynamics.</p>
+      <a href="Markov_Chain_Market_Analysis.pdf" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <span class="tag ml">Machine Learning</span>
+      <h3>SVD Handwritten Digit Classification (2025)</h3>
+     <p><strong>Skills:</strong> Python, NumPy, linear algebra, matrix factorization, pattern recognition.</p>
+     <p><strong>Outcome:</strong> Developed a classification algorithm using Singular Value Decomposition (SVD) for handwritten digit recognition.</p>
+     <a href="SVD_Handwritten_Digit_Classification.pdf" target="_blank">View Project</a>
+   </div>
+
+    <div class="project-card">
+      <span class="tag data">Data Analysis</span>
+      <h3>Genetic Oscillator Simulation (2025)</h3>
+      <p><strong>Skills:</strong> Python, differential equations, stochastic simulation.</p>
+      <p><strong>Outcome:</strong> Compared deterministic and stochastic dynamics in genetic oscillator models.</p>
+      <a href="Genetic_Oscillator.pdf" target="_blank">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="cv">
+  <h2>Curriculum Vitae</h2>
+  <a class="cv-link" href="CV.pdf" target="_blank">Download CV</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p><strong>Email:</strong> your.email@example.com</p>
+  <p><strong>GitHub:</strong> https://github.com/supppp3005</p>
+</section>
+
+<footer>
+  &copy; 2026 Subash K C
+</footer>
 
 </body>
 </html>
